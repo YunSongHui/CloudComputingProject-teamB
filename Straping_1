@@ -59,9 +59,10 @@ with open('dp.html') as f:
 
         academics.append({'학력':academic})
 
-    for deadline_html in re.findall(r'<div class="side">.*?</div>', html, re.DOTALL):
-
-        deadline = re.search(r'<span class="day">(.*?)</span>', deadline_html).group(1)
+    for location_html in re.findall(r'<div class="sDesc">.*?</div>', html, re.DOTALL):
+        
+#       location = re.search(r'<span>(.*?)</span>'
+    
 
     for deadline_html in re.findall(r'<div class="side">.*?</div>', html, re.DOTALL):
 
