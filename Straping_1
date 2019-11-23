@@ -1,0 +1,75 @@
+import re
+from html import unescape
+
+with open('dp.html') as f:
+    html = f.read()
+    titles = []
+    companies = []
+    areas = []
+    careers = []
+    academics = []
+    regulars = []
+    locations = []
+    deadlines = []
+
+    for title_html in re.findall(r'<a href="/Recruit/GI_Read/.*?>', html, re.DOTALL):
+
+        t_url = re.search(r'<a href="(.*?)"', title_html).group(1)
+        t_url = 'http://www.jobkorea.co.kr' + t_url
+
+        title = re.sub(r'<a href="(.*?)title="', '', title_html)
+        title = re.sub(r'" .*?>', '', title)
+        title = unescape(title)
+
+        titles.append({'제목': title, '제목 url': t_url})
+
+    for company_html in re.findall(r'<a class="coLink" href=".*?" .*?>.*?</a>', html, re.DOTALL):
+        c_url = re.search(r'href="(.*?)"', company_html).group(1)
+
+        company = re.sub(r'<.*?>', '', company_html)
+        company = unescape(company)
+
+        companies.append({'기업명':company, '기업 url': c_url})
+
+    for area_html in re.findall(r'<div class="sTit">.*?</div>', html, re.DOTALL):
+
+        area = re.sub(r'<.*?>', '', area_html)
+        area = unescape(area)
+
+        areas.append({'분야':area})
+
+    for career_html in re.findall(r'<div class="sDesc">.*?</div>', html, re.DOTALL):
+
+        career = re.search(r'<strong>(.*?)</strong>', career_html).group(1)
+        
+        career = re.sub(r'<.*?>', '', career)
+        career = unescape(career)
+
+        careers.append({'경력':career})
+
+    for academic_html in re.findall(r'<div class="sDesc">.*?</div>', html, re.DOTALL):
+
+        academic = re.search(r'<span>(.*?)</span>', academic_html).group(1)
+
+        academic = re.sub(r'<.*?>', '', academic)
+        academic = unescape(academic)
+
+        if academic == '':
+                academic = '학력 무관'
+
+        academics.append({'학력':academic})
+
+    for deadline_html in re.findall(r'<div class="side">.*?</div>', html, re.DOTALL):
+
+        deadline = re.search(r'<span class="day">(.*?)</span>', deadline_html).group(1)
+
+    for deadline_html in re.findall(r'<div class="side">.*?</div>', html, re.DOTALL):
+
+        deadline = re.search(r'<span class="day">(.*?)</span>', deadline_html).group(1)
+
+        deadline = re.sub(r'<.*?>', '', deadline)
+        deadline = unescape(deadline)
+
+        print('기한 :', deadline)
+
+        deadlines.append({'기한':deadline})
