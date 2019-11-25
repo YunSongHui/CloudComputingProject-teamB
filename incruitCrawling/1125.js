@@ -16,23 +16,23 @@ const puppeteer = require('puppeteer');
                 var company = tr.querySelector('th > div > div.check_list_r > span > a').title
                 var title = tr.querySelector('td:nth-child(2) > div > span.accent > a').title
                 var field = tr.querySelector('td:nth-child(2) > div > p.details_txts.firstChild > em').textContent //분야
-                var careerEducate = tr.querySelector('td:nth-child(2) > div > p:nth-child(4)>em').textContent.split('|') //경력+학력
-                var career = careerEducate[0]
-                var educate = careerEducate[1]
+                var careerAcademic = tr.querySelector('td:nth-child(2) > div > p:nth-child(4)>em').textContent.split('|') //경력+학력
+                var career = careerAcademic[0]
+                var academic = careerAcademic[1]
                 var areaWorkingcondition = tr.querySelector('td:nth-child(3) > div > p > em').textContent.split('\n') //위치+근무조건
                 var area = areaWorkingcondition[1]
                 var workingcondition = areaWorkingcondition[2]
-                var duedate = tr.querySelector('td.lasts > div.ddays > p:nth-last-child(1)').textContent
+                var deadline = tr.querySelector('td.lasts > div.ddays > p:nth-last-child(1)').textContent
 
                 var data = {
                     company,
                     title,
                     field,
                     career,
-                    educate,
+                    academic,
                     area,
                     workingcondition,
-                    duedate
+                    deadline
                 }
                 result.push(data)
             });
