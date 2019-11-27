@@ -1,0 +1,38 @@
+import requests
+import lxml.html
+
+def main():
+
+    session = requests.Session()
+    response = requests.get('http://www.jobkorea.co.kr/starter/')
+    urls = scrape_list_page(response)
+
+    for url in urls:
+        response = session.get(url)
+        Info = scrape_detail_page(response)
+        print(Info)
+        break
+
+def scrape_list_page(response):
+    root = lxml.html.fromstring(response.content)
+    root.make_links_absolute(response.url)
+    for title in root.cssselect('.info .tit a'):
+        title_url = title.get('href')
+        
+        yield title_url
+
+
+def scrape_detail_page(response):
+    root = lxml.html.fromstring(response.content)
+    Info = {
+            'Company': root.cssselect('.sumTit .hd_3 .coName')[0].text_content(),
+            'Title' : root.cssselect('.sumTit .hd_3')[0].text_content(),
+            'Career' : root.cssselect('#container > section > div > article > div.tbRow.clear > div:nth-child(1) > dl > dd:nth-child(2) strong')[0].text_content(),
+#            'Academic' : root.cssselect('#container > section > div > article > div.tbRow.clear > div:nth-child(1) > dl > dd:nth-child(4) > strong')[0].text_content,
+            'Workingcondition' : root.cssselect('#container > section > div > article > div.tbRow.clear > div:nth-child(2) > dl > dd:nth-child(2) > ul > li strong')[0].text_content(),
+            'Area' : root.cssselect('#container > section > div > article > div.tbRow.clear > div:nth-child(2) > dl > dd:nth-child(6) a')[0].text_content(),
+            'Deadline' : root.cssselect('#tab02 > div.divReadBx.clear.devMakeSameHeight > article.artReadPeriod > div > dl.date > dd:nth-child(4) span')[0].text_content()
+            }
+    return Info
+  
+  main()
