@@ -1,0 +1,34 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas
+
+def crawling(page_count):
+    front_url="http://www.jobkorea.co.kr/Starter/?JoinPossible_Stat=0&schOrderBy=0&LinkGubun=0&LinkNo=0&schType=0&schGid=0&Page="
+
+    result = []
+    for i in range(1, page_count +1):
+        url = front_url + str(i)
+        print(url)
+
+
+        temp_result = requests.get(url)
+        soup = BeautifulSoup(temp_result.text, "lxml")
+
+        titles = soup.select('a.link')
+
+
+        for j in range(len(titles)):
+            print(titles[j].text.strip())
+            result.append(titles[j].text.strip())
+
+    return result
+
+
+def main():
+    page_count = 2
+
+    result = crawling(page_count)
+    print(result)
+    print()
+
+main()
