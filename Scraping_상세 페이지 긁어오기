@@ -1,3 +1,5 @@
+import time
+import re
 import requests
 import lxml.html
 
@@ -8,10 +10,10 @@ def main():
     urls = scrape_list_page(response)
 
     for url in urls:
+        time.sleep(1)
         response = session.get(url)
         Info = scrape_detail_page(response)
         print(Info)
-        break
 
 def scrape_list_page(response):
     root = lxml.html.fromstring(response.content)
