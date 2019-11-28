@@ -46,6 +46,7 @@ a {
     border-bottom: 1px solid #ddd;
 }
 
+
 .srch_wrap .category_area .tit_career {
     background-position: 50% 18px;
 }
@@ -72,9 +73,10 @@ a {
 
 .category_area fieldset {
     float: left;
-    width: 160px;
+    width: 170px;
     border-right: 1px solid #ebebeb;
     box-sizing: border-box;
+    position : center;
 }
 
 .srch_wrap .btn_area button:first-child {
@@ -261,7 +263,7 @@ input {
 .srch_wrap .category label {
     display: inline-block;
     overflow: hidden;
-    width: 110px;
+    width: 90px;
     height: 18px;
     line-height: 13px;
     text-overflow: ellipsis;
