@@ -9,10 +9,6 @@
 <body>
     <div class="area_public_content srch_wrap">
         <form id="searchForm" method="get" action="/zf_user/jobs/public/list#searchTitle">
-            <input type="hidden" name="sort" value="ud" id="sort">
-            <input type="hidden" name="quick_apply" value="" id="quick_apply">
-            <input type="hidden" name="search_day" value="" id="search_day">
-            <input type="hidden" name="keyword" value="" id="keyword">
             <div class="category_area">
                 <fieldset>
                     <h2 class="ico_category tit_career">경력</h2>
@@ -241,5 +237,38 @@
             </div>
         </form>
     </div>
-  </body>
+
+    <div class="major_list_wrap">
+        <div class="recruitment_tab">
+            <ul>
+                <li calss="on">
+                    <strong class="count">
+                        <span> count </span>
+                        건
+                    </strong>
+                </li>
+            </ul>
+        </div>
+        
+        <div class = "recruilt_list_wrap">
+            <div class = "list_info">
+                <div class ="cm_name_searchbox">
+                    <form name ="frm" id="frm" method="get" action="#listTop">
+                        <input type="text" name="search_keyword" id="search_keyword"
+                        placeholder="기업명, 채용공고제목">
+                        <button type = "button" id="btn_company_search" 
+                        onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">검색</button>
+                    </form>
+                </div>
+            </div>
+
+           
+
+
+        </div>
+    </div>
+
+
+</body>
+
 </html>
