@@ -28,15 +28,17 @@ async function getData() {
 }
 
 async function nextPage() {
+    if(!await page.$('#listCompanies > div > div.pg_bottom.um_paginnation > article > a.btn_pgnext')) return false;
     await page.evaluate(() => {
         document.querySelector('#listCompanies > div > div.pg_bottom.um_paginnation > article > a.btn_pgnext').click()
     })
     await page.waitFor(3000)
+    return true
 }
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false
+//        headless: false
     });
     page = await browser.newPage();
     await page.goto('https://www.jobplanet.co.kr/companies?&sort_by=review_avg_cache');
@@ -46,9 +48,8 @@ async function nextPage() {
     while (true) {
         var data = await getData()
         data_list.push(data)
-        await nextPage()
         console.log(data)
-//      console.log(data_list)
+        if (!await nextPage()) break;
     }
     await browser.close();
 })();
