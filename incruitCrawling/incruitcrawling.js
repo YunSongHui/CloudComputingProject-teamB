@@ -29,8 +29,10 @@ async function getData() {
                     var area = areaWorkingcondition[1]
                     var workingcondition = areaWorkingcondition[2]
                     var deadline = getAttributeText(tr, 'td.lasts > div.ddays > p:nth-last-child(1)', 'textContent')
-
+                    var link=getAttributeText(tr,'th > div > div.check_list_r > span > a','href')
+                    var site='인크루트'
                     var data = {
+                        site,
                         company,
                         title,
                         field,
@@ -38,7 +40,8 @@ async function getData() {
                         academic,
                         area,
                         workingcondition,
-                        deadline
+                        deadline,
+                        link
                     }
                     result.push(data)
                 } catch (error) {
