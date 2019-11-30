@@ -1,0 +1,48 @@
+sudo apt-cache search mysql-server
+// 설치 가능한 MySQL 버전을 확인
+
+sudo apt-get install mysql-server-5.7
+// MySQL 5.7 버전 설치
+
+vi /etc/mysql/conf.d/mysql.conf
+// 한글설정을 위해 이동
+
+[mysqld]
+ datadir=/var/lib/mysql
+ socket=/var/lib/mysql/mysql.sock
+ user=mysql
+ character-set-server=utf8
+ collation-server=utf8_general_ci
+ init_connect = set collation_connection = utf8_general_ci
+ init_connect = set names utf8
+ 
+[mysql]
+ default-character-set=utf8
+ 
+[mysqld_safe]
+ log-error=/var/log/mysqld.log
+ pid-file=/var/run/mysqld/mysqld.pid
+ default-character-set=utf8
+ 
+[client]
+ default-character-set=utf8
+ 
+[mysqldump]
+ default-character-set=utf8
+// 한글 설정
+
+sudo /etc/init.d/mysql restart
+// MySQL 재시작
+
+mysql -u root -p
+// root로 접속 후,
+
+create user 'cloud'@'%' identified by '1111';
+// 모든 ip로 접속 가능한 계정 생성
+
+GRANT ALL PRIVILEGES ON *.* TO 'cloud'@'%' IDENTIFIED BY '비밀번호';
+// 모든 데이터베이스, 테이블에 대한 권한을 열어준다
+
+quit
+sudo ufw allow 3306/tcp
+// 외부에서 접속할 수 있도록 3306 포트를 열어준다
