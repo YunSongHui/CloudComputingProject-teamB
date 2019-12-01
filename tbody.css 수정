@@ -16,6 +16,11 @@ table {
     border-color: grey;
 }
 
+table.common_recruit_list{
+        width: 1050px;
+        margin: 0 auto;
+}
+
 tr {
     display: table-row;
     vertical-align: inherit;
@@ -127,4 +132,9 @@ a:-webkit-any-link {
 
 .common_recruit_list .company_info .salary {
     background-position: 0 -200px;
+}
+
+.recruilt_list_wrap{
+    width: 1050px;
+    margin : 0 auto;
 }
