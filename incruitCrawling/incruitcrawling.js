@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 var page
+const {insertRecruitment} = require('../DatabaseConnector/')
 
 async function getData() {
     var data = await page.evaluate(() => {
@@ -21,7 +22,7 @@ async function getData() {
                 try {
                     var company = getAttributeText(tr, 'th > div > div.check_list_r > span > a', 'title')
                     var title = getAttributeText(tr, 'td:nth-child(2) > div > span.accent > a', 'title')
-                    var field = getAttributeText(tr, 'td:nth-child(2) > div > p.details_txts.firstChild > em', 'textContent') //분야
+                    var field1 = getAttributeText(tr, 'td:nth-child(2) > div > p.details_txts.firstChild > em', 'textContent') //분야
                     var careerAcademic = getAttributeText(tr, 'td:nth-child(2) > div > p:nth-child(4)>em', 'textContent').split('|') //경력+학력
                     var career = careerAcademic[0]
                     var academic = careerAcademic[1]
@@ -29,19 +30,19 @@ async function getData() {
                     var area = areaWorkingcondition[1]
                     var workingcondition = areaWorkingcondition[2]
                     var deadline = getAttributeText(tr, 'td.lasts > div.ddays > p:nth-last-child(1)', 'textContent')
-                    var link=getAttributeText(tr,'th > div > div.check_list_r > span > a','href')
-                    var site='인크루트'
+                    var titlelink=getAttributeText(tr,'th > div > div.check_list_r > span > a','href')
+                    var sitename='인크루트'
                     var data = {
-                        site,
+                        sitename,
                         company,
                         title,
-                        field,
+                        field1,
                         career,
                         academic,
                         area,
                         workingcondition,
                         deadline,
-                        link
+                        titlelink
                     }
                     result.push(data)
                 } catch (error) {
@@ -81,7 +82,11 @@ async function nextPage() {
     while (true) {
         var data = await getData()
         data_list.push(data)
-        console.log(data)
+        // console.log(data)
+        data.forEach(async d=>{
+            // console.log(d)
+            await insertRecruitment(d)
+        })
         if (!await nextPage()) break;
         // console.log(data_list)
     }
