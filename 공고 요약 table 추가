@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="content.css">
     <link rel="stylesheet" href="major.css">
+    <link rel="stylesheet" href="tbody.css">
 </head>
 
 <body>
@@ -249,21 +250,59 @@
                 </li>
             </ul>
         </div>
-        
-        <div class = "recruilt_list_wrap">
-            <div class = "list_info">
-                <div class ="cm_name_searchbox">
-                    <form name ="frm" id="frm" method="get" action="#listTop">
-                        <input type="text" name="search_keyword" id="search_keyword"
-                        placeholder="기업명, 채용공고제목">
-                        <button type = "button" id="btn_company_search" 
-                        onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">검색</button>
+
+        <div class="recruilt_list_wrap">
+            <div class="list_info">
+                <div class="cm_name_searchbox">
+                    <form name="frm" id="frm" method="get" action="#listTop">
+                        <input type="text" name="search_keyword" id="search_keyword" placeholder="기업명, 채용공고제목">
+                        <button type="button" id="btn_company_search"
+                            onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">검색</button>
                     </form>
                 </div>
             </div>
 
-           
-
+            <table border="1px" class="common_recruit_list">
+                <tbody>
+                    <tr id="rec-37345602" class="noti_list">
+                        <td class="company_nm">
+                            <a class="str_tit" 
+                                href="링크"
+                                target="_blank">
+                                <span>회사 이름</span>
+                            </a>
+                        </td>
+                        <td class="notification_info">
+                            <div class="job_tit">
+                                <a class="str_tit" 
+                                    href="링크"
+                                    target="_blank">
+                                    <span>공고 제목</span>
+                                </a>
+                            </div>
+                            <div class="job_sector">
+                                <span>분야1</span><span>분야2</span><span>분야3</span>
+                            </div>
+                            <div class="recruit_condition">
+                                <span class="career">경력</span><span class="education">학력</span>
+                            </div>
+                        </td>
+                        <td class="company_info">
+                            <p class="employment_type">정규직</p>
+                            <p class="work_place">지역</p>
+                            <p class="salary"></p>
+                        </td>
+                        <td class="support_info">
+                            <p class="deadlines">마감일</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            평점 연봉 소요시간
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
     </div>
