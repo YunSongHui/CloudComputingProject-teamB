@@ -12,6 +12,7 @@ create table Recruitment_Info (
 	field1 varchar(50),
 	field2 varchar(20),
 	field3 varchar(20),
+	career varchar(20),
 	academic varchar(10),
 	area varchar(50),
 	workingcondition varchar(10),
