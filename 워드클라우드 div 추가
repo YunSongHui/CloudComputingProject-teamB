@@ -159,7 +159,7 @@
                         </li>
                         <li>
                             <input type="checkbox" id="company_scale-7" name="company_scale[]" value="7">
-                            <label for="company_scale-7" title="외국계(법인/투자)">외국계(법인/투자)</label>
+                            <label for="company_scale-7" title="외국계">외국계</label>
                         </li>
                         <li>
                             <input type="checkbox" id="company_scale-8" name="company_scale[]" value="8">
@@ -263,46 +263,50 @@
             </div>
 
             <table class="common_recruit_list">
-                <tbody>
-                    <tr id="rec-37345602" class="noti_list">
-                        <td class="company_nm">
-                            <a class="str_tit" 
-                                href="링크"
-                                target="_blank">
-                                <span>회사 이름</span>
-                            </a>
-                        </td>
-                        <td class="notification_info">
-                            <div class="job_tit">
+                    <tbody>
+                        <tr id="rec-37345602" class="noti_list">
+                            <td class="company_nm" rowspan="2">
                                 <a class="str_tit" 
                                     href="링크"
                                     target="_blank">
-                                    <span>공고 제목</span>
+                                    <span>회사 이름</span>
                                 </a>
-                            </div>
-                            <div class="job_sector">
-                                <span>분야1</span><span>분야2</span><span>분야3</span>
-                            </div>
-                            <div class="recruit_condition">
-                                <span class="career">경력</span><span class="education">학력</span>
-                            </div>
-                        </td>
-                        <td class="company_info">
-                            <p class="employment_type">정규직</p>
-                            <p class="work_place">지역</p>
-                            <p class="salary"></p>
-                        </td>
-                        <td class="support_info">
-                            <p class="deadlines">기간</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="average_info" colspan="4">
-                            평점 연봉 소요시간
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                <div>
+                                    <a href="워드클라우드 링크" target="_blank">
+                                    <img src="test.bmp" alt="감정분석 워드클라우드" width="160" height="100"></a>
+                                </div>
+                            </td>
+                            <td class="notification_info">
+                                <div class="job_tit">
+                                    <a class="str_tit" 
+                                        href="링크"
+                                        target="_blank">
+                                        <span>공고 제목</span>
+                                    </a>
+                                </div>
+                                <div class="job_sector">
+                                    <span>분야1</span><span>분야2</span><span>분야3</span>
+                                </div>
+                                <div class="recruit_condition">
+                                    <span class="career">경력</span><span class="education">학력</span>
+                                </div>
+                            </td>
+                            <td class="company_info">
+                                <p class="employment_type">정규직</p>
+                                <p class="work_place">지역</p>
+                                <p class="salary"></p>
+                            </td>
+                            <td class="support_info">
+                                <p class="deadlines">기간</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="average_info" colspan="3">
+                                평점 연봉 소요시간
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
         </div>
     </div>
