@@ -76,6 +76,7 @@ def crawling(page_count):
 
                 areas = thing.cssselect('.sDesc span:nth-child(3)')
                 area = areas[0].text
+                area = area.split(', ')[0]
                 result.append(area)
 
                 deadlines = thing.cssselect('.side .day')
