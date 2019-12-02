@@ -262,7 +262,7 @@
                 </div>
             </div>
 
-            <table border="1px" class="common_recruit_list">
+            <table class="common_recruit_list">
                 <tbody>
                     <tr id="rec-37345602" class="noti_list">
                         <td class="company_nm">
@@ -293,11 +293,11 @@
                             <p class="salary"></p>
                         </td>
                         <td class="support_info">
-                            <p class="deadlines">마감일</p>
+                            <p class="deadlines">기간</p>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4">
+                        <td class="average_info" colspan="4">
                             평점 연봉 소요시간
                         </td>
                     </tr>
