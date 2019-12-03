@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const { getAll, setTransferTime } = require('../DatabaseConnector')
 
 var page
 
@@ -13,24 +14,18 @@ var page
         deviceScaleFactor: 1,
     });
 
+    let Recruitment = await getAll()
 
-    // await page.goto('https://map.kakao.com/');
-    // await page.waitForSelector('.carRoute.carRoute-INACTIVE')
-    // await page.evaluate(() => {
-    //     document.querySelector('.carRoute.carRoute-INACTIVE').click()
-    // })
+    // console.log(Recruitment)
 
+    for (const item of Recruitment) {
+        // console.log(item.area)
+        let data = await getTakeTime('강남구', item.area)
+        await setTransferTime(item.id, { car: data.car, publicTransport: data.public })
+        console.log(data)
+    }
 
-    let data = await getTakeTime('대전 서구', '강남구')
-    console.log(data)
-    data = await getTakeTime('서울 강남구', '서울 서초구')
-    console.log(data)
-    data = await getTakeTime('충북대', '오송역')
-    console.log(data)
-
-
-
-    // await browser.close();
+    await browser.close();
 })();
 
 async function getTakeTime(from, to) {
@@ -74,11 +69,15 @@ async function getTakeTime(from, to) {
         return document.querySelector('div.TransitRouteResultView > ul > li.TransitRouteItem > div.title.clickArea > span.time').textContent
     })
 
-    car = car.replace('시간',':')
-    car = car.replace(/분| /g,'')
-    
-    public = public.replace('시간',':')
-    public = public.replace(/분| /g,'')
+    car = car.replace('시간', ':')
+    car = car.replace(/분| /g, '')
+    if(!car.includes(":")) car = "00:"+car
+    car += ":00"
+
+    public = public.replace('시간', ':')
+    public = public.replace(/분| /g, '') 
+    if(!public.includes(":")) public = "00:"+public
+    public += ":00"
 
     return {
         from, to,
