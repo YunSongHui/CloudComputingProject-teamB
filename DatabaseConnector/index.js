@@ -10,12 +10,44 @@ async function init() {
     connection = await mysql.createConnection(db_conf);
 }
 
+exports.getAll = async function getAll(){
+    if (!connection) await init()
+
+    try {
+        var sql = await format('SELECT * FROM Recruitment_Info')
+        console.log(sql)
+        const result = await connection.execute(sql);
+        return result[0]
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+
+
+}
+
+exports.setTransferTime = async function setTransferTime(id,data){
+    if (!connection) await init()
+
+    try {
+        var sql = await format('UPDATE Recruitment_Info SET ? WHERE id = ?',[data,id])
+        console.log(sql)
+        const result = await connection.execute(sql);
+        return result
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+
+
+}
+
 exports.insertRecruitment = async function insertRecruitment(data) {
     if (!connection) await init()
 
     try {
         var sql = await format('INSERT INTO Recruitment_Info SET ?', data)
-        // console.log(sql)
+        console.log(sql)
         const result = await connection.execute(sql);
         return result
     } catch (error) {
@@ -38,7 +70,6 @@ exports.insertJobplanet = async function insertJobplanet(data, company) {
         console.log(error)
         return false
     }
-
 }
 
 init()
