@@ -27,7 +27,7 @@ async function getData() {
                     var career = careerAcademic[0]
                     var academic = careerAcademic[1]
                     var areaWorkingcondition = getAttributeText(tr, 'td:nth-child(3) > div > p > em', 'textContent').split('\n') //위치+근무조건
-                    var area = areaWorkingcondition[1]
+                    var area = areaWorkingcondition[1].replace(" 외","")
                     var workingcondition = areaWorkingcondition[2]
                     var deadline = getAttributeText(tr, 'td.lasts > div.ddays > p:nth-last-child(1)', 'textContent')
                     var titlelink=getAttributeText(tr,'th > div > div.check_list_r > span > a','href')
@@ -82,13 +82,13 @@ async function nextPage() {
     while (true) {
         var data = await getData()
         data_list.push(data)
-        // console.log(data)
+        console.log(data)
         data.forEach(async d=>{
-            // console.log(d)
+            console.log(d)
             await insertRecruitment(d)
         })
         if (!await nextPage()) break;
-        // console.log(data_list)
+        console.log(data_list)
     }
     await browser.close();
 })();
