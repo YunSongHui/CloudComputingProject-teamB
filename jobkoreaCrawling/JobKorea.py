@@ -11,6 +11,7 @@ def crawling(page_count):
     front_url="http://www.jobkorea.co.kr/Starter/?JoinPossible_Stat=0&schOrderBy=0&LinkGubun=0&LinkNo=0&schType=0&schGid=0&Page="
 
     result=[]
+    t = 0
 
     for i in range(1, page_count+1):
         url = front_url+str(i)
@@ -83,13 +84,27 @@ def crawling(page_count):
                 deadline = deadlines[0].text
 
                 result.append(deadline)
+                
+                select_sql = 'SELECT titlelink FROM exercise'
 
-                insert_sql = 'INSERT INTO Recruitment_Info(company, title, titlelink, sitename, field1, field2, field3, career, academic, area, workingcondition, deadline) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+                c.execute(select_sql)
 
-                insert_val = company, title, title_url, site_name, field1, field2, field3, career, academic, area, workingcondition, deadline
+                for row in c.fetchall:
+                    for i in range(len(row)):
+                        if row[i] == title_url:
+                            t = 1
 
-                c.execute(insert_sql, insert_val)
-                conn.commit()
+                if t == 0:
+                    insert_sql = 'INSERT INTO exercise(company, title, titlelink, sitename, field1, field2, field3, career, academic, area, workingcondition, deadline) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+
+                    insert_val = company, title, title_url, site_name, field1, field2, field3, career, academic, area, workingcondition, deadline
+
+                    c.execute(insert_sql, insert_val)
+                    conn.commit()
+
+                elif t == 1:
+                    t = 0
+                    break
 
     return result
 
