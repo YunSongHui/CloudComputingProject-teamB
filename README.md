@@ -68,14 +68,15 @@ $pip3 install mysqlclient
 $mysql -u cloud -p
 
 ```sql
-create database Crawler  
-use Crawler  
+create database Crawler;
+use Crawler;
 
-create table Recruitment_Info (  
-  company varchar(25) not null,  
-	title varchar(50) not null,  
-	titlelink varchar(100),  
-	sitename varchar(20),  
+create table Recruitment_Info (
+	id int(11) primary key auto_increment,
+  	company varchar(40) not null,  
+	title varchar(100) not null,  
+	titlelink varchar(100) not null,  
+	sitename varchar(20) not null,  
 	field1 varchar(50),  
 	field2 varchar(20),  
 	field3 varchar(20),  
@@ -87,8 +88,7 @@ create table Recruitment_Info (
 	star float(3),  
 	income int(6),  
 	publicTransport TIME,  
-	car TIME,  
+	car TIME,
 	walk TIME,  
-	primary key(company, title)  
 );
 ```
