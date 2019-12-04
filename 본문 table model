@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <table border="1px">
+            <tr>
+                <td>
+                    <div>
+                        회사이름
+                    </div>
+                    <div>
+                        워드클라우드
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        제목
+                    </div>
+                    <div>
+                        분야
+                    </div>
+                    <div>
+                        경력
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        위치
+                    </div>
+                    <div>
+                        정규
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        마감일
+                    </div>
+                    <div>
+                        출처
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    평점 연봉 소요시간
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

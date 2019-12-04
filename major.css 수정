@@ -211,15 +211,11 @@ input, button, textarea, select, optgroup, option {
     background-color: #6d82f3;
 }
 
-.major_list_wrap .add_option {
-    position: absolute;
-    top: 38px;
-    right: 0;
-    width: 100px;
-    padding-right: 18px;
-}
-
-.add_option .sri_select {
+.sri_select {
+    display: inline-block;
+    position: relative;
+    height: 32px;
+    color: #444;
     font-size: 13px;
-    color : #555;
+    vertical-align: middle;
 }
