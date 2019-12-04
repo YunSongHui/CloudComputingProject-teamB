@@ -1,0 +1,192 @@
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-family: "Malgun Gothic",dotum,gulim,sans-serif;
+    font-size: inherit;
+    line-height: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+table.common_recruit_list{
+        width: 1050px;
+        margin: 0 auto;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.major_list_wrap .recruilt_list_wrap .common_recruit_list td.company_nm {
+    padding-left: 12px;
+}
+
+.common_recruit_list td.company_nm {
+    padding-left: 15px;
+    color: #444;
+    font-size: 15px;
+}
+
+.recruilt_list_wrap .common_recruit_list td {
+    padding: 18px 0 10px;
+    height: 65px;
+    border-bottom: 1px solid #ebebeb;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+
+.recruilt_list_wrap .common_recruit_list {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.common_recruit_list tr.noti_list .company_nm .str_tit,
+.common_recruit_list tr.noti_list .notification_info .str_tit {
+    color: #425ad4;
+    font-weight: bold;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.common_recruit_list .notification_info .job_tit .str_tit {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 90%;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.common_recruit_list .notification_info .job_tit {
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    color: #444;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.common_recruit_list .notification_info .job_sector {
+    color: #666;
+    font-size: 13px;
+}
+
+.common_recruit_list .word_cloud {
+    padding-top: 10px;
+}
+
+.common_recruit_list .source_site {
+    padding-top: 15px;
+}
+
+.common_recruit_list .recruit_condition {
+    color: #666;
+    font-size: 12px;
+    padding-top: 15px;
+}
+
+.common_recruit_list .company_info {
+    color: #777;
+    font-size: 12px;
+    width: 12%;
+}
+
+.common_recruit_list .support_info {
+    color: #777;
+    font-size: 12px;
+    width: 12%;
+}
+
+.common_recruit_list .notification_info {
+    width: 53%;
+}
+
+.common_recruit_list .average_info {
+    color: #444;
+    font-size: 13px;
+    width: 12%;
+}
+
+.common_recruit_list .notification_info .job_sector span:first-child:before {
+    margin: 0;
+    width: 0;
+}
+
+.common_recruit_list .notification_info .job_sector span:before {
+    display: inline-block;
+    margin: 0 11px 0 8px;
+    width: 1px;
+    height: 11px;
+    vertical-align: middle;
+    background-color: #e5e5e5;
+    content: "";
+}
+
+.common_recruit_list .recruit_condition p:first-child {
+    padding: 0;
+}
+
+.common_recruit_list .recruit_condition p {
+    margin: 0;
+    padding: 6px 0 0;
+}
+
+.common_recruit_list .notification_info .recruit_condition span:first-child:before {
+    margin: 0;
+    width: 0;
+}
+
+.common_recruit_list .notification_info .recruit_condition span:before {
+    display: inline-block;
+    margin: 0 11px 0 8px;
+    width: 1px;
+    height: 11px;
+    vertical-align: middle;
+    background-color: #e5e5e5;
+    content: "";
+}
+
+.common_recruit_list .company_info .work_place {
+    background-position: 0 -100px;
+}
+
+.common_recruit_list .company_info .salary {
+    background-position: 0 -200px;
+}
+
+.recruilt_list_wrap{
+    width: 1050px;
+    margin : 0 auto;
+}
+
+.recruilt_list_wrap .common_recruit_list .average_info {
+    height: 15px;
+    padding : 18px 0 18px;
+    text-align: center;
+}
