@@ -11,7 +11,6 @@ def crawling(page_count):
     front_url="http://www.jobkorea.co.kr/Starter/?JoinPossible_Stat=0&schOrderBy=0&LinkGubun=0&LinkNo=0&schType=0&schGid=0&Page="
 
     result=[]
-    t = 0
 
     for i in range(1, page_count+1):
         url = front_url+str(i)
@@ -20,6 +19,7 @@ def crawling(page_count):
         root=lxml.html.fromstring(list_page.content)
         for everything in root.cssselect('.filterList'):
             for thing in everything.cssselect('li'):
+                t = 0
 
                 companies = thing.cssselect('.co .coTit a')
                 company = companies[0].text.strip()
@@ -101,10 +101,6 @@ def crawling(page_count):
 
                     c.execute(insert_sql, insert_val)
                     conn.commit()
-
-                elif t == 1:
-                    t = 0
-                    break
 
     return result
 
