@@ -48,26 +48,26 @@ default-character-set=utf8
 [mysqldump]  
 default-character-set=utf8  
   
-$sudo /etc/init.d/mysql restart
+$sudo /etc/init.d/mysql restart  
 
-$mysql -u root -p
+$mysql -u root -p  
 
-'''SQL
-create user 'cloud'@'%' identified by '1111';
+```sql 
+create user 'cloud'@'%' identified by '1111';  
 
-GRANT ALL PRIVILEGES ON *.* TO 'cloud'@'%' IDENTIFIED BY '1111';
+GRANT ALL PRIVILEGES ON *.* TO 'cloud'@'%' IDENTIFIED BY '1111';  
 
-quit
-'''
+quit  
+```  
 
-$sudo ufw allow 3306/tcp
+$sudo ufw allow 3306/tcp  
 
 $pip3 install mysqlclient  
 
 #### MySQL 테이블  
 $mysql -u cloud -p
 
-'''SQL
+```sql
 create database Crawler  
 use Crawler  
 
@@ -91,6 +91,4 @@ create table Recruitment_Info (
 	walk TIME,  
 	primary key(company, title)  
 );
-'''
-
-#### 
+```
