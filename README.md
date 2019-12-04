@@ -1,5 +1,18 @@
 # CloudComputingProject-teamB
 
+#### Python3 및 pip3 설치
+$sudo apt-get install -y python3 python3-venv
+
+$python3 -m venv scraping
+
+$sudo apt-get install python3-pip
+
+#### Crawling lib 설치
+$pip3 install requests
+
+$pip3 install lxml
+
+$pip3 install cssselect  
 
 #### MySQL 설치 및 MySQL client 설치, 3306 포트 열기
 $sudo apt-cache search mysql-server
@@ -47,4 +60,6 @@ mysql> quit
 
 $sudo ufw allow 3306/tcp
 
-$pip install mysqlclient
+$pip3 install mysqlclient  
+
+#### MySQL 테이블 
