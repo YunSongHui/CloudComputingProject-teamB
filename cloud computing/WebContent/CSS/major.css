@@ -1,0 +1,225 @@
+.major_list_wrap {
+    position: relative;
+}
+
+.recruitment_tab ul {
+    position: relative;
+    margin-left: 1px;
+    border-bottom: 1px solid #666;
+}
+
+.recruitment_tab ul:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: " ";
+}
+
+.recruitment_tab ul li.on {
+    z-index: 2;
+    margin-left: -1px;
+}
+
+.recruitment_tab ul li {
+    float: left;
+    position: relative;
+    z-index: 1;
+    margin-left: -1px;
+}
+
+.recruitment_tab ul li.on a strong.count {
+    display: inline-block;
+    visibility: visible;
+    overflow: visible;
+    position: relative;
+    margin-left: 0;
+    padding-left: 3px;
+    width: auto;
+    height: auto;
+    font-size: 17px;
+}
+
+.recruitment_tab ul li a strong.count {
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    margin-left: -1px;
+    width: 1px;
+    height: 1px;
+    vertical-align: top;
+}
+
+li.on a {
+    margin-bottom: -1px;
+    padding-top: 8px;
+    width: 195px;
+    height: 33px;
+    border-color: #666;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.recruitment_tab ul li a {
+    float: left;
+    padding: 7px 0 2px;
+    width: 194px;
+    height: 33px;
+    border: 1px solid #eaeaea;
+    border-bottom: 0 none;
+    color: #444;
+    font-size: 17px;
+    letter-spacing: -2px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #fbfbfb;
+    cursor: pointer;
+}
+
+.recruitment_tab ul li.on a strong.count span {
+    color: #ff3c00;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+
+.recruitment_tab ul:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: " ";
+}
+
+.recruilt_list_wrap {
+    margin-bottom: 40px;
+}
+
+.recruilt_list_wrap .list_info {
+    position: relative;
+    padding: 10px 0 5px;
+    height: 32px;
+}
+
+.recruilt_list_wrap .cm_name_searchbox {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    font-size: 0;
+}
+
+.cm_name_searchbox{
+    padding-right : 15px;
+}
+
+.recruilt_list_wrap .search_filter_box {
+    position: relative;
+    padding: 14px 0 19px;
+    border-top: 2px solid #444;
+}
+
+.recruilt_list_wrap .add_option {
+    position: absolute;
+    top: 8px;
+    right: 1px;
+    letter-spacing: -1px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.major_list_wrap .recruilt_list_wrap .list_info {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    width: 300px;
+}
+
+.major_list_wrap .recruilt_list_wrap .cm_name_searchbox form>input {
+    padding-bottom: 2px;
+    letter-spacing: -1px;
+    line-height: 14px;
+}
+
+.major_list_wrap .recruilt_list_wrap .search_filter_box {
+    padding: 20px 0 10px 14px;
+    height: 32px;
+    border-top: 0 none;
+}
+
+.major_list_wrap .recruilt_list_wrap .add_option {
+    float: right;
+    position: relative;
+    top: 0;
+    padding-bottom: 8px;
+    width: 260px;
+    height: 32px;
+    text-align: right;
+}
+
+.major_list_wrap .recruilt_list_wrap .add_option .sri_select {
+    width: 107px;
+}
+
+.recruilt_list_wrap .cm_name_searchbox input {
+    display: inline-block;
+    padding-left: 10px;
+    width: 187px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-right: 0 none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 13px;
+    line-height: 32px;
+}
+
+.recruilt_list_wrap .search_filter_box:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+input, button, textarea, select {
+    line-height: normal;
+}
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+.recruilt_list_wrap .cm_name_searchbox button {
+    display: inline-block;
+    padding-bottom: 4px;
+    width: 52px;
+    height: 32px;
+    border: 1px solid #5e75ee;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: top;
+    background-color: #6d82f3;
+}
+
+.major_list_wrap .add_option {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 100px;
+    padding-right: 18px;
+}
+
+.add_option .sri_select {
+    font-size: 13px;
+    color : #555;
+}
