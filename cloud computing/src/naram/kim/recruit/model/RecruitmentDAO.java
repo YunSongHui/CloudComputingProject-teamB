@@ -50,27 +50,27 @@ public class RecruitmentDAO {
 			
 			while(rs.next()) {
 				
-				String bcomp = rs.getString("company");
-				String btitle = rs.getString("title");
-				String btitlelink = rs.getString("titlelink");
-				String bsitename = rs.getString("sitename");
-				String bfield1 = rs.getString("field1");
-				String bfield2 = rs.getString("field2");
-				String bfield3 = rs.getString("field3");
-				String bcareer = rs.getString("career");
-				String bacademic = rs.getString("academic");
-				String barea = rs.getString("area");
-				String bworkingcondition = rs.getString("workingcondition");
-				String bdeadline = rs.getString("deadline");
-				float bstar = rs.getFloat("star");
-				int bincome = rs.getInt("income");
-				String bpublicT = rs.getString("publicTransport");
-				String bcar = rs.getString("car");
-				String bwalk = rs.getString("walk");
+				String comp = rs.getString("company");
+				String title = rs.getString("title");
+				String titlelink = rs.getString("titlelink");
+				String sitename = rs.getString("sitename");
+				String field1 = rs.getString("field1");
+				String field2 = rs.getString("field2");
+				String field3 = rs.getString("field3");
+				String career = rs.getString("career");
+				String academic = rs.getString("academic");
+				String area = rs.getString("area");
+				String workingcondition = rs.getString("workingcondition");
+				String deadline = rs.getString("deadline");
+				float star = rs.getFloat("star");
+				int income = rs.getInt("income");
+				String publicT = rs.getString("publicTransport");
+				String car = rs.getString("car");
+				String walk = rs.getString("walk");
 				
-				RecruitmentVO vo = new RecruitmentVO(bcomp, btitle, btitlelink, bsitename
-						, bfield1, bfield2, bfield3, bcareer, bacademic, barea, bworkingcondition
-						, bdeadline, bstar, bincome, bpublicT, bcar, bwalk);
+				RecruitmentVO vo = new RecruitmentVO(comp, title, titlelink, sitename
+						, field1, field2, field3, career, academic, area, workingcondition
+						, deadline, star, income, publicT, car, walk);
 				
 				list.add(vo);
 			}

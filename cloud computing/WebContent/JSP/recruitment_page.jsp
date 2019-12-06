@@ -222,6 +222,7 @@
 			</div>
 
 			<table class="common_recruit_list">
+			<c:forEach var="vo" items="${recruit_list }"> <!-- jstl의 for문 -->
 				<tbody>
 					<tr id="rec-37345602" class="noti_list">
 						<td class="company_nm" rowspan="2"><a class="str_tit"
@@ -234,8 +235,8 @@
 							</div></td>
 						<td class="notification_info">
 							<div class="job_tit">
-								<a class="str_tit" href="링크" target="_blank"
-									style="text-decoration: none"> <span>공고 제목</span>
+								<a class="str_tit" href="${vo.btitlelink }" target="_blank"
+									style="text-decoration: none"> <span>${vo.btitle }</span>
 								</a>
 							</div>
 							<div class="job_sector">
@@ -262,6 +263,7 @@
 						<td class="average_info" colspan="3">평점 연봉 소요시간</td>
 					</tr>
 				</tbody>
+				</c:forEach>
 			</table>
 		</div>
 	</div>
