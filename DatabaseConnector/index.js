@@ -14,7 +14,7 @@ exports.getAll = async function getAll(){
     if (!connection) await init()
 
     try {
-        var sql = await format('SELECT * FROM Recruitment_Info')
+        var sql = await format('SELECT * FROM Recruitment_Info WHERE ISNULL(car)')
         console.log(sql)
         const result = await connection.execute(sql);
         return result[0]
