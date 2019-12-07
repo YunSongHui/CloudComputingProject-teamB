@@ -104,7 +104,7 @@ public class RecruitmentDAO {
 		
 		ArrayList<RecruitmentVO> list = new ArrayList<>();
 		
-		String sql = "select * from Recruitment_Info where company like ?";
+		String sql = "select * from Recruitment_Info where company like ? or title like ?";
 		 
 		
 		try {
@@ -113,6 +113,7 @@ public class RecruitmentDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, "%"+search+"%");
+			pstmt.setString(2, "%"+search+"%");
 			
 			rs = pstmt.executeQuery(); // executeQuery()를 통해 select문 실행
 			
