@@ -8,21 +8,26 @@ app.get('/success', async function (req, res) {
     console.log(mySpec)
     let company_list = await getJobkoreaSuccess()
     for (const company of company_list) {
-        let total_score = 0
+        let spec_score = 0
         for (const spec in company) {
             if (spec == 'company') continue
             const score = company[spec]
-            if (!mySpec[spec]) {
+            if(!score){
+                company[spec + '_score'] = 10
+            }
+            else if (!mySpec[spec]) {
                 company[spec + '_score'] = 0
                 continue
             }
-            company[spec + '_score'] = mySpec[spec] / score * 10
-            total_score += company[spec + '_score']
+            else company[spec + '_score'] = mySpec[spec] / score * 10
+            spec_score += company[spec + '_score']
         }
-        company['total_score'] = total_score
+        company['spec_score'] = spec_score
     }
     // console.log(company_list.sort((a, b) =>a.total_score < b.total_score))
-    res.send(company_list.sort(function(a, b) { return b.total_score - a.total_score}));
+    company_list = company_list.sort(function(a, b) { return b.spec_score - a.spec_score})
+    let result = company_list.map((data)=>{return {company:data.company,spec_score:data.spec_score,link:data.titlelink}})
+    res.json(result);
 });
 
 app.listen(1102, function () {
