@@ -200,23 +200,6 @@
 	</div>
 
 	<div class="major_list_wrap">
-		<div class="recruitment_tab">
-			<ul>
-				<li calss="on"><strong class="count"> <span>
-							count </span> 건
-				</strong></li>
-			</ul>
-		</div>
-
-		<div class="add_option">
-			<select class="sri_select">
-				<option><a href="#" class="list_opt" data-value="all" selected>전체보기</a></option>
-				<option><a href="#" class="link_opt" data-value="ih">연봉높은순</a></option>
-				<option><a href="#" class="link_opt" data-value="ir">연봉낮은순</a></option>
-				<option><a href="#" class="link_opt" data-value="sh">별점높은순</a></option>
-				<option><a href="#" class="link_opt" data-value="sr">별점낮은순</a></option>
-			</select>
-		</div>
 
 		<div class="recruilt_list_wrap">
 
@@ -235,9 +218,9 @@
 			<table class="common_recruit_list">
 				<tbody>
 					<tr id="rec-37345602" class="noti_list">
-						<td class="company_nm" rowspan="2"><a class="str_tit"
-							href="링크" target="_blank" style="text-decoration: none"><span>${li.company }</span>
-						</a></td>
+						<td class="company_nm" rowspan="2">
+						<span class="str_tit">${li.company }</span>
+						</td>
 						<td class="notification_info">
 							<div class="job_tit">
 								<a class="str_tit" href="" target="_blank"
@@ -248,17 +231,18 @@
 								<span>${li.field1 }</span><span>${li.field2 }</span><span>${li.field3 }</span>
 							</div>
 							<div class="recruit_condition">
-								<span class="career">경력 ${li.career }</span><span class="education">학력 ${li.academic }</span>
+								<span class="career">${li.career } </span><span class="education">${li.academic }</span>
 							</div>
 						</td>
 						<td class="company_info">
-							<p class="employment_type">근무 조건 ${li.workingcondition }</p>
-							<p class="work_place">주소 ${li.area }</p>
+							<p class="employment_type"  style="padding-top: 15px">${li.workingcondition }</p>
+							<p class="work_place" style="padding-top: 10px">${li.area }</p>
 						</td>
 						<td class="support_info">
-							<p class="deadlines">${li.deadline }</p>
-								<a href="https://www.incruit.com/" target="_blank"> <img
-									src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
+							<p class="deadlines" style="padding-top: 10px">마감 ${li.deadline }</p>
+							<div class="source_logo" style="padding-top: 7px">
+								<a href="https://www.incruit.com/" target="_blank">
+								<img src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
 							</div>
 						</td>
 					</tr>
