@@ -19,7 +19,8 @@
             </td>
             <td class="forecast_per">
                 <span>합격예측</span>
-                <span id="forecast_percent">n %</span>
+                <span id="forecast_percent">n</span>
+                <span>%</span>
             </td>
         </tr>
     </table>

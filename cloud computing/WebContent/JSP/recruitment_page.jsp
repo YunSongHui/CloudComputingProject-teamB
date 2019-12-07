@@ -4,9 +4,12 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="CSS/content.css">
-<link rel="stylesheet" href="CSS/major.css">
-<link rel="stylesheet" href="CSS/tbody.css">
+<link rel="stylesheet" href="../CSS/content.css">
+<link rel="stylesheet" href="../CSS/major.css">
+<link rel="stylesheet" href="../CSS/tbody.css">
+<title>
+	RECRUITMENT PAGE
+</title>
 </head>
 
 <body>
