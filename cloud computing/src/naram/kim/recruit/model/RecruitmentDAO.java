@@ -25,7 +25,7 @@ public class RecruitmentDAO {
 		return dao;
 	}
 	
-	String url = "jdbc:mysql://ec2-184-72-68-146.compute-1.amazonaws.com/Crawler";
+	String url = "jdbc:mysql://ec2-54-235-0-24.compute-1.amazonaws.com/Crawler";
 	String user = "cloud";
 	String upw = "1111";
 	
@@ -50,25 +50,26 @@ public class RecruitmentDAO {
 			
 			while(rs.next()) {
 				
-				String comp = rs.getString("company");
-				String title = rs.getString("title");
-				String titlelink = rs.getString("titlelink");
-				String sitename = rs.getString("sitename");
-				String field1 = rs.getString("field1");
-				String field2 = rs.getString("field2");
-				String field3 = rs.getString("field3");
-				String career = rs.getString("career");
-				String academic = rs.getString("academic");
-				String area = rs.getString("area");
-				String workingcondition = rs.getString("workingcondition");
-				String deadline = rs.getString("deadline");
-				float star = rs.getFloat("star");
-				int income = rs.getInt("income");
-				String publicT = rs.getString("publicTransport");
-				String car = rs.getString("car");
-				String walk = rs.getString("walk");
+				int id = rs.getInt(1);
+				String company = rs.getString(2);
+				String title = rs.getString(3);
+				String titlelink = rs.getString(4);
+				String sitename = rs.getString(5);
+				String field1 = rs.getString(6);
+				String field2 = rs.getString(7);
+				String field3 = rs.getString(8);
+				String career = rs.getString(9);
+				String academic = rs.getString(10);
+				String area = rs.getString(11);
+				String workingcondition = rs.getString(12);
+				String deadline = rs.getString(13);
+				float star = rs.getFloat(14);
+				int income = rs.getInt(15);
+				String publicT = rs.getString(16);
+				String car = rs.getString(17);
+				String walk = rs.getString(18);
 				
-				RecruitmentVO vo = new RecruitmentVO(comp, title, titlelink, sitename
+				RecruitmentVO vo = new RecruitmentVO(id, company, title, titlelink, sitename
 						, field1, field2, field3, career, academic, area, workingcondition
 						, deadline, star, income, publicT, car, walk);
 				

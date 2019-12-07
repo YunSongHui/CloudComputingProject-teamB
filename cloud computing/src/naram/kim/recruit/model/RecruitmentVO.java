@@ -1,7 +1,10 @@
 package naram.kim.recruit.model;
 
+import java.sql.Date;
+
 public class RecruitmentVO {
 
+	private int id;
 	private String company;
 	private String title;
 	private String titlelink;
@@ -24,10 +27,11 @@ public class RecruitmentVO {
 		
 	}
 	
-	public RecruitmentVO(String company, String title, String titlelink, String sitename, String field1, String field2, String field3
+	public RecruitmentVO(int id, String company, String title, String titlelink, String sitename, String field1, String field2, String field3
 			, String career, String academic, String area, String workingcondition, String deadline, float star, int income
 			, String publicTransport, String car, String walk) {
 		super();
+		this.id = id;
 		this.company = company;
 		this.title = title;
 		this.titlelink = titlelink;
@@ -47,6 +51,14 @@ public class RecruitmentVO {
 		this.walk = walk;
 		
 	} // 생성자
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getCompany() {
 		return company;

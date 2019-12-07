@@ -1,4 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="naram.kim.recruit.model.*" %>
+<%@page import="java.util.ArrayList" %>
+
+<%
+	RecruitmentDAO dao = RecruitmentDAO.getInstance();
+
+	ArrayList<RecruitmentVO> list = dao.listRecruitment();
+	
+	pageContext.setAttribute("list", list);
+%>
 
 <!DOCTYPE html>
 <html>
@@ -7,9 +18,6 @@
 <link rel="stylesheet" href="../CSS/content.css">
 <link rel="stylesheet" href="../CSS/major.css">
 <link rel="stylesheet" href="../CSS/tbody.css">
-<title>
-	RECRUITMENT PAGE
-</title>
 </head>
 
 <body>
@@ -202,8 +210,7 @@
 
 		<div class="add_option">
 			<select class="sri_select">
-				<option><a href="#" class="list_opt" data-value="all"
-				selected>전체보기</a></option>
+				<option><a href="#" class="list_opt" data-value="all" selected>전체보기</a></option>
 				<option><a href="#" class="link_opt" data-value="ih">연봉높은순</a></option>
 				<option><a href="#" class="link_opt" data-value="ir">연봉낮은순</a></option>
 				<option><a href="#" class="link_opt" data-value="sh">별점높은순</a></option>
@@ -223,42 +230,40 @@
 					</form>
 				</div>
 			</div>
-
+			
 			<table class="common_recruit_list">
-			<c:forEach var="vo" items="${recruit_list }"> <!-- jstl의 for문 -->
 				<tbody>
 					<tr id="rec-37345602" class="noti_list">
 						<td class="company_nm" rowspan="2"><a class="str_tit"
-							href="링크" target="_blank" style="text-decoration: none"> <span>회사이름</span>
+							href="링크" target="_blank" style="text-decoration: none"><span>회사</span>
 						</a>
-							<!-- <div class="word_cloud">
-								<a href="워드클라우드 링크" target="_blank"> <img src="image/test.bmp"
+							<div class="word_cloud">
+								<a href="워드클라우드 링크" target="_blank"> <img src="../image/test.bmp"
 									alt="감정분석 워드클라우드" width="160" height="100"></a>
-							</div> -->
-						</td>
+							</div></td>
 						<td class="notification_info">
 							<div class="job_tit">
-								<a class="str_tit" href="${vo.btitlelink }" target="_blank"
-									style="text-decoration: none"> <span>${vo.btitle }</span>
+								<a class="str_tit" href="" target="_blank"
+									style="text-decoration: none"><span>타이틀</span>
 								</a>
 							</div>
 							<div class="job_sector">
-								<span>분야1</span><span>분야2</span><span>분야3</span>
+								<span>필드1</span><span>필드2</span><span>필드3</span>
 							</div>
 							<div class="recruit_condition">
 								<span class="career">경력</span><span class="education">학력</span>
 							</div>
 						</td>
 						<td class="company_info">
-							<p class="employment_type">정규직</p>
-							<p class="work_place">지역</p>
+							<p class="employment_type">근무 조건</p>
+							<p class="work_place">주소</p>
 							<p class="salary"></p>
 						</td>
 						<td class="support_info">
 							<p class="deadlines">마감일</p>
 							<div class="source_site">
 								<a href="https://www.incruit.com/" target="_blank"> <img
-									src="image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
+									src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
 							</div>
 						</td>
 					</tr>
@@ -266,8 +271,51 @@
 						<td class="average_info" colspan="3">평점 연봉 소요시간</td>
 					</tr>
 				</tbody>
-				</c:forEach>
 			</table>
+			
+			<c:forEach var="li" items="${list }">
+			<table class="common_recruit_list">
+				<tbody>
+					<tr id="rec-37345602" class="noti_list">
+						<td class="company_nm" rowspan="2"><a class="str_tit"
+							href="링크" target="_blank" style="text-decoration: none"><span>${li.company }</span>
+						</a>
+							<div class="word_cloud">
+								<a href="워드클라우드 링크" target="_blank"> <img src="../image/test.bmp"
+									alt="감정분석 워드클라우드" width="160" height="100"></a>
+							</div></td>
+						<td class="notification_info">
+							<div class="job_tit">
+								<a class="str_tit" href="" target="_blank"
+									style="text-decoration: none"><span>${li.title }</span>
+								</a>
+							</div>
+							<div class="job_sector">
+								<span>${li.field1 }</span><span>${li.field2 }</span><span>${li.field3 }</span>
+							</div>
+							<div class="recruit_condition">
+								<span class="career">경력 ${li.career }</span><span class="education">학력 ${li.academic }</span>
+							</div>
+						</td>
+						<td class="company_info">
+							<p class="employment_type">근무 조건 ${li.workingcondition }</p>
+							<p class="work_place">주소 ${li.area }</p>
+							<p class="salary">연봉 ${li.income }</p>
+						</td>
+						<td6 class="support_info">
+							<p class="deadlines">${li.deadline }</p>
+							<div class="source_site">
+								<a href="https://www.incruit.com/" target="_blank"> <img
+									src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="average_info" colspan="3">평점 ${li.star } 소요시간</td>
+					</tr>
+				</tbody>
+			</table>
+			</c:forEach>
 		</div>
 	</div>
 
