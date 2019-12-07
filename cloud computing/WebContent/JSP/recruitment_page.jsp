@@ -240,6 +240,8 @@
 						</td>
 						<td class="support_info">
 							<p class="deadlines" style="padding-top: 10px">마감 ${li.deadline }</p>
+							<%
+							%>
 							<div class="source_logo" style="padding-top: 7px">
 								<a href="https://www.incruit.com/" target="_blank">
 								<img src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
