@@ -10,7 +10,7 @@ async function init() {
     connection = await mysql.createConnection(db_conf);
 }
 
-exports.getAll = async function getAll(){
+exports.getAll = async function getAll() {
     if (!connection) await init()
 
     try {
@@ -26,11 +26,11 @@ exports.getAll = async function getAll(){
 
 }
 
-exports.setTransferTime = async function setTransferTime(id,data){
+exports.setTransferTime = async function setTransferTime(id, data) {
     if (!connection) await init()
 
     try {
-        var sql = await format('UPDATE Recruitment_Info SET ? WHERE id = ?',[data,id])
+        var sql = await format('UPDATE Recruitment_Info SET ? WHERE id = ?', [data, id])
         console.log(sql)
         const result = await connection.execute(sql);
         return result
@@ -81,6 +81,21 @@ exports.insertJobkoreaSuccess = async function insertJobkoreaSuccess(data) {
         const result = await connection.execute(sql);
         console.log(result)
         return result
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+
+exports.getJobkoreaSuccess = async function getJobkoreaSuccess(data) {
+    if (!connection) await init()
+
+
+    try {
+        var sql = await format('SELECT * FROM SuccessSpec')
+        console.log(sql)
+        const result = await connection.execute(sql);
+        return result[0]
     } catch (error) {
         console.log(error)
         return false
