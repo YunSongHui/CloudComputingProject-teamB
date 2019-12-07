@@ -72,4 +72,19 @@ exports.insertJobplanet = async function insertJobplanet(data, company) {
     }
 }
 
+exports.insertJobkoreaSuccess = async function insertJobkoreaSuccess(data) {
+    if (!connection) await init()
+
+    try {
+        var sql = await format('INSERT INTO SuccessSpec SET ?', data)
+        console.log(sql)
+        const result = await connection.execute(sql);
+        console.log(result)
+        return result
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+
 init()
