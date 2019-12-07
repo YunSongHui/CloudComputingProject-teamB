@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const { insertJobkoreaSuccess } = require('../DatabaseConnector')
-let curPage = 1
+let curPage = 231
 
 var page
 var subpage
