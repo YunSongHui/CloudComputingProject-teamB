@@ -92,7 +92,7 @@ exports.getJobkoreaSuccess = async function getJobkoreaSuccess(data) {
 
 
     try {
-        var sql = await format('SELECT * FROM SuccessSpec')
+        var sql = await format('SELECT Recruitment_Info.*,SuccessSpec.* FROM Recruitment_Info INNER JOIN SuccessSpec ON Recruitment_Info.company=SuccessSpec.company')
         console.log(sql)
         const result = await connection.execute(sql);
         return result[0]
