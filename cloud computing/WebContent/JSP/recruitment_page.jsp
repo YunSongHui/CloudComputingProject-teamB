@@ -231,59 +231,13 @@
 				</div>
 			</div>
 			
-			<table class="common_recruit_list">
-				<tbody>
-					<tr id="rec-37345602" class="noti_list">
-						<td class="company_nm" rowspan="2"><a class="str_tit"
-							href="링크" target="_blank" style="text-decoration: none"><span>회사</span>
-						</a>
-							<div class="word_cloud">
-								<a href="워드클라우드 링크" target="_blank"> <img src="../image/test.bmp"
-									alt="감정분석 워드클라우드" width="160" height="100"></a>
-							</div></td>
-						<td class="notification_info">
-							<div class="job_tit">
-								<a class="str_tit" href="" target="_blank"
-									style="text-decoration: none"><span>타이틀</span>
-								</a>
-							</div>
-							<div class="job_sector">
-								<span>필드1</span><span>필드2</span><span>필드3</span>
-							</div>
-							<div class="recruit_condition">
-								<span class="career">경력</span><span class="education">학력</span>
-							</div>
-						</td>
-						<td class="company_info">
-							<p class="employment_type">근무 조건</p>
-							<p class="work_place">주소</p>
-							<p class="salary"></p>
-						</td>
-						<td class="support_info">
-							<p class="deadlines">마감일</p>
-							<div class="source_site">
-								<a href="https://www.incruit.com/" target="_blank"> <img
-									src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="average_info" colspan="3">평점 연봉 소요시간</td>
-					</tr>
-				</tbody>
-			</table>
-			
 			<c:forEach var="li" items="${list }">
 			<table class="common_recruit_list">
 				<tbody>
 					<tr id="rec-37345602" class="noti_list">
 						<td class="company_nm" rowspan="2"><a class="str_tit"
 							href="링크" target="_blank" style="text-decoration: none"><span>${li.company }</span>
-						</a>
-							<div class="word_cloud">
-								<a href="워드클라우드 링크" target="_blank"> <img src="../image/test.bmp"
-									alt="감정분석 워드클라우드" width="160" height="100"></a>
-							</div></td>
+						</a></td>
 						<td class="notification_info">
 							<div class="job_tit">
 								<a class="str_tit" href="" target="_blank"
@@ -300,18 +254,22 @@
 						<td class="company_info">
 							<p class="employment_type">근무 조건 ${li.workingcondition }</p>
 							<p class="work_place">주소 ${li.area }</p>
-							<p class="salary">연봉 ${li.income }</p>
 						</td>
-						<td6 class="support_info">
+						<td class="support_info">
 							<p class="deadlines">${li.deadline }</p>
-							<div class="source_site">
 								<a href="https://www.incruit.com/" target="_blank"> <img
 									src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td class="average_info" colspan="3">평점 ${li.star } 소요시간</td>
+						<td class="average_info" colspan="3">
+						<span style="margin-right:20px">평점 ${li.star }</span>
+						<span>평균연봉 ${li.income }만</span></br>
+						<span style="margin-right:20px">대중교통 소요시간 ${li.publicTransport }</span>
+						<span style="margin-right:20px">자동차 소요시간 ${li.car }</span>
+						<span>도보 소요시간 ${li.walk }</span>
+						</td>
 					</tr>
 				</tbody>
 			</table>

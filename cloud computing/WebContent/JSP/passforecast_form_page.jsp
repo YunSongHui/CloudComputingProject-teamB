@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PASS FORECAST</title>
+    <title>OPIC TEST</title>
 </head>
 
 <body>
 
-    <form id="spec" action="http://localhost:1102/success">
+    <form id="spec" action="http://54.235.0.24:1102/success" >
         <div>
             <span>학점</span>
             <input type="number" name="grade" id="grade" step=any>
@@ -25,7 +25,7 @@
             <input type="number" name="toeicSpeaking" id="toeicSpeaking" step=any>
         </div>
         <div>
-            <span>OPIC</span>
+            <span>OPIC : </span>
             <select name="" id="opic">
                 <option value="0">없음</option>
                 <option value="1">NL</option>
