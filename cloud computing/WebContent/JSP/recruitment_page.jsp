@@ -200,7 +200,7 @@
 		<div class="add_option">
 			<select class="sri_select">
 				<option><a href="#" class="list_opt" data-value="all"
-						selected>전체보기</a></option>
+				selected>전체보기</a></option>
 				<option><a href="#" class="link_opt" data-value="ih">연봉높은순</a></option>
 				<option><a href="#" class="link_opt" data-value="ir">연봉낮은순</a></option>
 				<option><a href="#" class="link_opt" data-value="sh">별점높은순</a></option>
