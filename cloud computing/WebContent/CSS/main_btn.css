@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.main_btn_area{
+    position:absolute;
+    bottom:50%;
+    left:35%;
+}
+
+.main_btn_area .btn_topic{
+    width: 230px;
+    height : 80px;
+    border: 1px solid #6275de;
+    box-sizing: border-box;
+    color: #fff;
+    background: #6b80f1;
+    margin-right:20px;
+}
+
+.main_btn_area .btn_recruit{
+    width: 230px;
+    height: 80px;
+    border: 1px solid #6275de;
+    box-sizing: border-box;
+    color: #fff;
+    background: #6b80f1;
+}
+
