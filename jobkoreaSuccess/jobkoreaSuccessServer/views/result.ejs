@@ -21,6 +21,7 @@
                 <tr>
                     <th>회사명</th>
                     <th>스펙점수</th>
+                    <th>합격예측</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +29,8 @@
                 <% for(var i = 0; i < result.length; i++) { %>
                 <tr onclick="location.href='<%= result[i].link %>'">
                     <td><%= result[i].company %></td>
-                    <td><%= result[i].spec_score %></td>
+                    <td><%= parseInt(result[i].spec_score) %></td>
+                    <td><h5><span class="badge badge-<%= result[i].pass_color %>"><%= result[i].company_pass %></span></h5></td>
                 </tr>
                 <% } %>
             </tbody>
