@@ -4,11 +4,13 @@
 <%@page import="java.util.ArrayList" %>
 
 <%
+
 	RecruitmentDAO dao = RecruitmentDAO.getInstance();
 
 	ArrayList<RecruitmentVO> list = dao.listRecruitment();
 	
 	pageContext.setAttribute("list", list);
+
 %>
 
 <!DOCTYPE html>
@@ -205,11 +207,10 @@
 
 			<div class="list_info">
 				<div class="cm_name_searchbox">
-					<form name="frm" id="frm" method="get" action="#listTop">
+					<form name="frm" id="frm" method="get" action="searching_recruit.jsp">
 						<input type="text" name="search_keyword" id="search_keyword"
-							placeholder="기업명, 채용공고제목">
-						<button type="button" id="btn_company_search"
-							onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">검색</button>
+							placeholder="기업명, 채용공고제목" required />
+						<input type="submit" id="btn_company_search" value="검색">
 					</form>
 				</div>
 			</div>
@@ -242,10 +243,18 @@
 							<p class="deadlines" style="padding-top: 10px">마감 ${li.deadline }</p>
 							<%
 							%>
+							<c:if test="${li.sitename eq '잡코리아' }">
+							<div class="source_logo" style="padding-top: 7px">
+								<a href="https://www.jobkorea.co.kr" target="_blank">
+								<img src="../image/jobkorea.png" alt="출처 사이트" width="90" height="30"></a>
+							</div>
+							</c:if>
+							<c:if test="${li.sitename eq '인크루트' }">
 							<div class="source_logo" style="padding-top: 7px">
 								<a href="https://www.incruit.com/" target="_blank">
 								<img src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
 							</div>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
