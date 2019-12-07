@@ -1,13 +1,14 @@
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="naram.kim.recruit.model.*" %>
-<%@page import="java.util.ArrayList" %>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="naram.kim.recruit.model.*"%>
+<%@page import="java.util.ArrayList"%>
 
 <%
 	RecruitmentDAO dao = RecruitmentDAO.getInstance();
 
 	ArrayList<RecruitmentVO> list = dao.listRecruitment();
-	
+
 	pageContext.setAttribute("list", list);
 %>
 
@@ -22,8 +23,7 @@
 
 <body>
 	<div class="area_public_content srch_wrap">
-		<form id="searchForm" method="get"
-			action="/zf_user/jobs/public/list#searchTitle">
+		<form id="searchForm" method="get">
 			<div class="category_area">
 				<fieldset>
 					<h2 class="ico_category tit_career">경력</h2>
@@ -190,7 +190,7 @@
 			</div>
 			<div class="area_condition">
 				<div class="btn_area" id="listTop">
-					<button type="button" class="btn_reset" data-id="btn_reset"
+					<button type="reset" class="btn_reset" data-id="btn_reset"
 						data-type="public">선택 초기화</button>
 					<button type="button" class="btn_srch" data-id="btn_search"
 						data-type="public">선택한 조건으로 검색</button>
@@ -206,59 +206,66 @@
 			<div class="list_info">
 				<div class="cm_name_searchbox">
 					<form name="frm" id="frm" method="get" action="#listTop">
-						<input type="text" name="search_keyword" id="search_keyword"
-							placeholder="기업명, 채용공고제목">
+						<input type="text" name="search_keyword" id="search_keyword" placeholder="기업명, 채용공고제목">
 						<button type="button" id="btn_company_search"
-							onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">검색</button>
+						onmousedown="try{n_trackEvent('public-recruit','search_btn','','');}catch(e){}">
+						검색</button>
 					</form>
 				</div>
 			</div>
-			
+
 			<c:forEach var="li" items="${list }">
-			<table class="common_recruit_list">
-				<tbody>
-					<tr id="rec-37345602" class="noti_list">
-						<td class="company_nm" rowspan="2">
-						<span class="str_tit">${li.company }</span>
-						</td>
-						<td class="notification_info">
-							<div class="job_tit">
-								<a class="str_tit" href="" target="_blank"
-									style="text-decoration: none"><span>${li.title }</span>
-								</a>
-							</div>
-							<div class="job_sector">
-								<span>${li.field1 }</span><span>${li.field2 }</span><span>${li.field3 }</span>
-							</div>
-							<div class="recruit_condition">
-								<span class="career">${li.career } </span><span class="education">${li.academic }</span>
-							</div>
-						</td>
-						<td class="company_info">
-							<p class="employment_type"  style="padding-top: 15px">${li.workingcondition }</p>
-							<p class="work_place" style="padding-top: 10px">${li.area }</p>
-						</td>
-						<td class="support_info">
-							<p class="deadlines" style="padding-top: 10px">마감 ${li.deadline }</p>
-							<%
-							%>
-							<div class="source_logo" style="padding-top: 7px">
-								<a href="https://www.incruit.com/" target="_blank">
-								<img src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="average_info" colspan="3">
-						<span style="margin-right:20px">평점 ${li.star }</span>
-						<span>평균연봉 ${li.income }만</span></br>
-						<span style="margin-right:20px">대중교통 소요시간 ${li.publicTransport }</span>
-						<span style="margin-right:20px">자동차 소요시간 ${li.car }</span>
-						<span>도보 소요시간 ${li.walk }</span>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="common_recruit_list">
+					<tbody>
+						<tr id="rec-37345602" class="noti_list">
+							<td class="company_nm" rowspan="2"><span class="str_tit">${li.company }</span>
+							</td>
+							<td class="notification_info">
+								<div class="job_tit">
+									<a class="str_tit" href="" target="_blank"
+										style="text-decoration: none"><span>${li.title }</span> </a>
+								</div>
+								<div class="job_sector">
+									<span>${li.field1 }</span><span>${li.field2 }</span><span>${li.field3 }</span>
+								</div>
+								<div class="recruit_condition">
+									<span class="career">${li.career } </span><span
+										class="education">${li.academic }</span>
+								</div>
+							</td>
+							<td class="company_info">
+								<p class="employment_type" style="padding-top: 15px">${li.workingcondition }</p>
+								<p class="work_place" style="padding-top: 10px">${li.area }</p>
+							</td>
+							<td class="support_info">
+								<p class="deadlines" style="padding-top: 10px">마감${li.deadline }</p> 
+									
+									<c:if test="${li.sitename eq '인크루트'}">
+									<div class="source_logo" style="padding-top: 7px">
+									<a href="https://www.incruit.com/" target="_blank"> <img
+										src="../image/incruit.png" alt="출처 사이트" width="90" height="30"></a>
+									</div>
+									</c:if>
+									
+									<c:if test="${li.sitename eq '잡코리아'}">
+									<div class="source_logo" style="padding-top: 7px">
+									<a href="https://www.jobkorea.co.kr/" target="_blank"> <img
+										src="../image/jobkorea.png" alt="출처 사이트" width="90" height="30"></a>
+									</div>
+									</c:if>
+							</td>
+						</tr>
+						<tr>
+							<td class="average_info" colspan="3">
+							<span style="margin-right: 20px">평점 ${li.star }</span>
+							<span>평균연봉 ${li.income }만</span></br>
+							<span style="margin-right: 20px">대중교통 소요시간 ${li.publicTransport }</span>
+							<span style="margin-right: 20px">자동차 소요시간 ${li.car }</span>
+							<span>도보 소요시간 ${li.walk }</span
+							></td>
+						</tr>
+					</tbody>
+				</table>
 			</c:forEach>
 		</div>
 	</div>
