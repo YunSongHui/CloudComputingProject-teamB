@@ -226,13 +226,13 @@
 				<tbody>
 					<tr id="rec-37345602" class="noti_list">
 						<td class="company_nm" rowspan="2"><a class="str_tit"
-							href="링크" target="_blank" style="text-decoration: none"> <span>회사
-									이름</span>
+							href="링크" target="_blank" style="text-decoration: none"> <span>회사이름</span>
 						</a>
-							<div class="word_cloud">
+							<!-- <div class="word_cloud">
 								<a href="워드클라우드 링크" target="_blank"> <img src="image/test.bmp"
 									alt="감정분석 워드클라우드" width="160" height="100"></a>
-							</div></td>
+							</div> -->
+						</td>
 						<td class="notification_info">
 							<div class="job_tit">
 								<a class="str_tit" href="${vo.btitlelink }" target="_blank"
