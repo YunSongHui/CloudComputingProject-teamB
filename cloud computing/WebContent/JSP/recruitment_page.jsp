@@ -229,7 +229,7 @@ RECRUITMENT PAGE
                   </td>
                   <td class="notification_info">
                      <div class="job_tit">
-                        <a class="str_tit" href="" target="_blank"
+                        <a class="str_tit" href="${li.titlelink }" target="_blank"
                            style="text-decoration: none"><span>${li.title }</span>
                         </a>
                      </div>

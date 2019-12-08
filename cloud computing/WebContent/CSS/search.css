@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 .new_search_area{
+	
 	height: 100px;
-    padding-top: 65px;
+    padding-top: 30px;
     padding-left: 322px;
 }
 
