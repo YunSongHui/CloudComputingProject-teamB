@@ -115,7 +115,8 @@ a:-webkit-any-link {
 
 .common_recruit_list .company_info {
     color: #777;
-    font-size: 15px;
+    font-size: 12px;
+    width: 12%;
 }
 
 .common_recruit_list .support_info {

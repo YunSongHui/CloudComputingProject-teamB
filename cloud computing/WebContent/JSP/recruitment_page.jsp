@@ -20,9 +20,13 @@
 <link rel="stylesheet" href="../CSS/content.css">
 <link rel="stylesheet" href="../CSS/major.css">
 <link rel="stylesheet" href="../CSS/tbody.css">
+
+<title>
+RECRUITMENT PAGE
+</title>
 </head>
 
-<body>
+<body> <!--
    <div class="area_public_content srch_wrap">
       <form id="searchForm" method="get"
          action="/zf_user/jobs/public/list#searchTitle">
@@ -198,12 +202,11 @@
             </div>
          </div>
       </form>
-   </div>
+   </div> -->
 
    <div class="major_list_wrap">
 
       <div class="recruilt_list_wrap">
-
          <div class="list_info">
             <div class="cm_name_searchbox">
                <form name="frm" id="frm" method="get" action="searching_recruit.jsp">
@@ -240,8 +243,6 @@
                   </td>
                   <td class="support_info">
                      <p class="deadlines" style="padding-top: 10px">마감 ${li.deadline }</p>
-                     <%
-                     %>
                      <c:if test="${li.sitename eq '잡코리아' }">
                      <div class="source_logo" style="padding-top: 7px">
                         <a href="https://www.jobkorea.co.kr" target="_blank">
@@ -259,10 +260,9 @@
                <tr>
                   <td class="average_info" colspan="3">
                   <span style="margin-right:20px">평점 ${li.star }</span>
-                  <span>평균연봉 ${li.income }만</span></br>
+                  <span style="margin-right:20px">평균연봉 ${li.income }만</span>
                   <span style="margin-right:20px">대중교통 소요시간 ${li.publicTransport }</span>
                   <span style="margin-right:20px">자동차 소요시간 ${li.car }</span>
-                  <span>도보 소요시간 ${li.walk }</span>
                   </td>
                </tr>
             </tbody>
