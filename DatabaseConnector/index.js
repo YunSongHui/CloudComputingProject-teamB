@@ -22,8 +22,6 @@ exports.getAll = async function getAll() {
         console.log(error)
         return false
     }
-
-
 }
 
 exports.setTransferTime = async function setTransferTime(id, data) {
@@ -38,8 +36,6 @@ exports.setTransferTime = async function setTransferTime(id, data) {
         console.log(error)
         return false
     }
-
-
 }
 
 exports.insertRecruitment = async function insertRecruitment(data) {
@@ -54,7 +50,6 @@ exports.insertRecruitment = async function insertRecruitment(data) {
         console.log(error)
         return false
     }
-
 }
 
 exports.insertJobplanet = async function insertJobplanet(data, company) {
@@ -67,6 +62,7 @@ exports.insertJobplanet = async function insertJobplanet(data, company) {
         console.log(result)
         return result
     } catch (error) {
+        await init()
         console.log(error)
         return false
     }
