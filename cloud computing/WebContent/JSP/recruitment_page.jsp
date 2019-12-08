@@ -27,7 +27,9 @@ RECRUITMENT PAGE
 </title>
 </head>
 
-<body> <!--
+<body>
+<jsp:include page="../header/header.jsp" />
+ <!--
    <div class="area_public_content srch_wrap">
       <form id="searchForm" method="get"
          action="/zf_user/jobs/public/list#searchTitle">

@@ -27,6 +27,7 @@
 </head>
 
 <body>
+<jsp:include page="../header/header.jsp" />
 <div class="major_list_wrap">
       <div class="recruilt_list_wrap">
 <c:forEach var="li" items="${list }">
