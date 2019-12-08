@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="../CSS/content.css">
 <link rel="stylesheet" href="../CSS/major.css">
 <link rel="stylesheet" href="../CSS/tbody.css">
+<link rel="stylesheet" href="../CSS/search.css">
 
 <title>
 RECRUITMENT PAGE
@@ -207,16 +208,16 @@ RECRUITMENT PAGE
    <div class="major_list_wrap">
 
       <div class="recruilt_list_wrap">
-         <div class="list_info">
+      
+      <div class="new_search_area">
             <div class="cm_name_searchbox">
                <form name="frm" id="frm" method="get" action="searching_recruit.jsp">
-                  <input type="text" name="search_keyword" id="search_keyword"
-                     placeholder="기업명, 채용공고제목" required />
+                  <input type="text" name="search_keyword" id="search_keyword" placeholder="기업명, 채용공고제목" required />
                   <button id="btn_company_search">검색</button>
                </form>
             </div>
          </div>
-         
+      
          <c:forEach var="li" items="${list }">
          <table class="common_recruit_list">
             <tbody>

@@ -105,17 +105,6 @@ li.on a {
     height: 32px;
 }
 
-.recruilt_list_wrap .cm_name_searchbox {
-    position: absolute;
-    top: 4px;
-    right: 0;
-    font-size: 0;
-}
-
-.cm_name_searchbox{
-    padding-right : 15px;
-}
-
 .recruilt_list_wrap .search_filter_box {
     position: relative;
     padding: 14px 0 19px;
@@ -141,11 +130,6 @@ form {
     width: 300px;
 }
 
-.major_list_wrap .recruilt_list_wrap .cm_name_searchbox form>input {
-    padding-bottom: 2px;
-    letter-spacing: -1px;
-    line-height: 14px;
-}
 
 .major_list_wrap .recruilt_list_wrap .search_filter_box {
     padding: 20px 0 10px 14px;
@@ -167,19 +151,6 @@ form {
     width: 107px;
 }
 
-.recruilt_list_wrap .cm_name_searchbox input {
-    display: inline-block;
-    padding-left: 10px;
-    width: 187px;
-    height: 32px;
-    border: 1px solid #ddd;
-    border-right: 0 none;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #888;
-    font-size: 13px;
-    line-height: 32px;
-}
 
 .recruilt_list_wrap .search_filter_box:after {
     display: block;
@@ -196,21 +167,6 @@ input, button, textarea, select, optgroup, option {
     font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
-}
-
-.recruilt_list_wrap .cm_name_searchbox button {
-    display: inline-block;
-    padding-bottom: 4px;
-    width: 52px;
-    height: 32px;
-    border: 1px solid #5e75ee;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    vertical-align: top;
-    background-color: #6d82f3;
 }
 
 .major_list_wrap .add_option {

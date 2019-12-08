@@ -72,10 +72,9 @@
 					<tr>
 						<td class="average_info" colspan="3">
 						<span style="margin-right:20px">평점 ${li.star }</span>
-						<span>평균연봉 ${li.income }만</span></br>
+						<span style="margin-right:20px">평균연봉 ${li.income }만</span>
 						<span style="margin-right:20px">대중교통 소요시간 ${li.publicTransport }</span>
 						<span style="margin-right:20px">자동차 소요시간 ${li.car }</span>
-						<span>도보 소요시간 ${li.walk }</span>
 						</td>
 					</tr>
 				</tbody>
