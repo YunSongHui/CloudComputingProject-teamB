@@ -238,3 +238,62 @@ CREATE TABLE IF NOT EXISTS `SuccessSpec` (
 
 
 ```
+#### AWS 서버 접속 
+1. PuTTY를 통해 우분투 리눅스 실행
+2. Session: Host Name (or IP address) 에
+ubuntu@ec2-54-235-0-24.compute-1.amazonaws.com 입력
+3. Port 22로 설정
+4. Category: SSH: Auth: Private key file for authentication: 에서
+Browse... 버튼을 누르고 다운받은 PuTTY Private Key File (my-linux-key.ppk) 열기
+5. Open
+
+#### AWS 서버 배포 준비
+1. WinSCP 실행
+2. 파일 프로토콜: SCP
+호스트이름: ec2-54-235-0-24.compute-1.amazonaws.com
+포트번호: 22
+사용자이름: ubuntu 입력
+3. 고급 버튼을 누르고
+고급 사이트 설정: SSH: 인증: 개인키 파일:  에서
+... 버튼을 누르고 다운받은 PuTTY Private Key File (my-linux-key.ppk) 열기
+4. 확인
+5. 로그인 세션으로 돌아와서 저장 버튼을 누르고 로그인
+6. 다운받은 cloud_computing.war 파일을
+/var/lib/tomcat8/webapps 경로에 이동
+7. 이제 WinSCP 는 종료해도 됩니다
+
+#### AWS 배포 시작
+1. 실행중인 PuTTY로 돌아와서 root 계정으로 접속
+```
+su-
+Password: 0127
+```
+2. 자바 설치
+```
+wget --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+mkdir /usr/local/java
+mv jdk-8u112-linux-x64.tar.gz /usr/local/java
+tar xvzf jdk-8u112-linux-x64.tar.gz 
+```
+3. 자바 설치 확인
+```
+java -version
+```
+4. 톰캣 설치
+```
+sudo apt-get install -y tomcat8
+```
+5. 톰캣 시작
+```
+service tomcat8 start
+```
+6. cloud_computing 파일 생성 확인
+```
+cd /var/lib/tomcat8/webapps/
+ls
+```
+7. 톰캣 재시작
+```
+service tomcat8 restart
+```
+8. 웹 브라우저에서 http://54.235.0.24:8080/cloud_computing/HTML/main_page.html 접속 
