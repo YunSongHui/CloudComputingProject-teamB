@@ -42,7 +42,7 @@ async function nextPage() {
         //        headless: false
     });
     page = await browser.newPage();
-    await page.goto('https://www.jobplanet.co.kr/companies?&sort_by=review_avg_cache');
+    await page.goto('https://www.jobplanet.co.kr/companies?sort_by=review_avg_cache');
 
     var data_list = []
 

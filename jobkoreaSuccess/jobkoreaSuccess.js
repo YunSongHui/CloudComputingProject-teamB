@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const { insertJobkoreaSuccess } = require('../DatabaseConnector')
-let curPage = 231
+let curPage = 1
 
 var page
 var subpage
@@ -93,7 +93,7 @@ async function nextPage() {
     var data_list = []
 
     const browser = await puppeteer.launch({
-        headless: false
+        // headless: false
     });
     page = await browser.newPage();
     subpage = await browser.newPage();
