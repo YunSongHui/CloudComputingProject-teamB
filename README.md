@@ -138,14 +138,14 @@ $sudo vi /etc/crontab
 ``` npm install ```
 
 #### 데이터베이스 사용자 정보 입력
-```json
+```
 데이터베이스 설정 파일 경로 : ./DatabaseConnector/db_config.json
 
 {
-    "host": "localhost", // 데이터베이스 서버 IP
-    "user": "cloud",	   // 데이터베이스 사용자 이름
-    "password": "1111",    // 데이터베이스 사용자 비밀번호
-    "database": "Crawler"  // 데이터베이스명
+    "host": "데이터베이스 서버 IP",
+    "user": "데이터베이스 사용자 이름",
+    "password": "데이터베이스 사용자 비밀번호",
+    "database": "데이터베이스 이름"
 }
 ```
 
@@ -170,7 +170,7 @@ node jobkoreaSuccess/jobkoreaSuccess
 node jobkoreaSuccess/jobkoreaSuccessServer/bin/www
 ```
 
-### 참고) 백그라운드 실행방법
+### 참고) Node.js 백그라운드 실행방법
 #### pm2 모듈 설치
 ```
 sudo npm i pm2 -g
