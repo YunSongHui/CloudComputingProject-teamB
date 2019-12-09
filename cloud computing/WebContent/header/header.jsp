@@ -21,10 +21,10 @@
                 <ul class="nav navbar-nav">
                 	
                     <li>
-                        <a href="/Mycloud_computing/HTML/main_page.html">HOME</a>
+                        <a href="/cloud_computing/HTML/main_page.html">HOME</a>
                     </li>
                     <li>
-                        <a href="/Mycloud_computing/JSP/recruitment_page.jsp">채용공고 </a>
+                        <a href="/cloud_computing/JSP/recruitment_page.jsp">채용공고 </a>
                     </li>
                     <li>
                         <a href="http://54.235.0.24:1102/spec">합격예측</a>
