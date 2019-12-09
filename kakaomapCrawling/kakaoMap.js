@@ -20,7 +20,7 @@ var page
 
     for (const item of Recruitment) {
         // console.log(item.area)
-        let data = await getTakeTime('강남구', item.area)
+        let data = await getTakeTime('강남구 청담동', item.area)
         await setTransferTime(item.id, { car: data.car, publicTransport: data.public })
         console.log(data)
     }

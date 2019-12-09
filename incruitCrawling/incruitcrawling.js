@@ -67,12 +67,11 @@ async function nextPage() {
     })
     await page.waitFor(5000)
     return true
-
 }
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false
+        // headless: false
     });
     page = await browser.newPage();
     await page.goto('http://job.incruit.com/entry/searchjob.asp?ct=12&ty=1&cd=1&group1=3&articlecount=60');

@@ -10,11 +10,11 @@ async function init() {
     connection = await mysql.createConnection(db_conf);
 }
 
-exports.getAll = async function getAll(){
+exports.getAll = async function getAll() {
     if (!connection) await init()
 
     try {
-        var sql = await format('SELECT * FROM Recruitment_Info')
+        var sql = await format('SELECT * FROM Recruitment_Info WHERE ISNULL(car)')
         console.log(sql)
         const result = await connection.execute(sql);
         return result[0]
@@ -22,15 +22,13 @@ exports.getAll = async function getAll(){
         console.log(error)
         return false
     }
-
-
 }
 
-exports.setTransferTime = async function setTransferTime(id,data){
+exports.setTransferTime = async function setTransferTime(id, data) {
     if (!connection) await init()
 
     try {
-        var sql = await format('UPDATE Recruitment_Info SET ? WHERE id = ?',[data,id])
+        var sql = await format('UPDATE Recruitment_Info SET ? WHERE id = ?', [data, id])
         console.log(sql)
         const result = await connection.execute(sql);
         return result
@@ -38,8 +36,6 @@ exports.setTransferTime = async function setTransferTime(id,data){
         console.log(error)
         return false
     }
-
-
 }
 
 exports.insertRecruitment = async function insertRecruitment(data) {
@@ -54,7 +50,6 @@ exports.insertRecruitment = async function insertRecruitment(data) {
         console.log(error)
         return false
     }
-
 }
 
 exports.insertJobplanet = async function insertJobplanet(data, company) {
@@ -66,6 +61,37 @@ exports.insertJobplanet = async function insertJobplanet(data, company) {
         const result = await connection.execute(sql);
         console.log(result)
         return result
+    } catch (error) {
+        await init()
+        console.log(error)
+        return false
+    }
+}
+
+exports.insertJobkoreaSuccess = async function insertJobkoreaSuccess(data) {
+    if (!connection) await init()
+
+    try {
+        var sql = await format('INSERT INTO SuccessSpec SET ?', data)
+        console.log(sql)
+        const result = await connection.execute(sql);
+        console.log(result)
+        return result
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+
+exports.getJobkoreaSuccess = async function getJobkoreaSuccess(data) {
+    if (!connection) await init()
+
+
+    try {
+        var sql = await format('SELECT Recruitment_Info.*,SuccessSpec.* FROM Recruitment_Info INNER JOIN SuccessSpec ON Recruitment_Info.company=SuccessSpec.company')
+        console.log(sql)
+        const result = await connection.execute(sql);
+        return result[0]
     } catch (error) {
         console.log(error)
         return false

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+    <title>내 스펙 입력</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title" align="center">내 스펙 입력</div>
+        <hr color="black" width=100%;>
+        <form id="spec" action="/success">
+            <label for="basic-url">학점</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="grade" name="grade">
+                <div class="input-group-append">
+                    <span class="input-group-text" >점</span>
+                </div>
+            </div>
+
+            <label for="basic-url">OPIC</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="opic" name="opic">
+                    <option value="0">없음</option>
+                    <option value="1">NL</option>
+                    <option value="2">NM</option>
+                    <option value="3">NH</option>
+                    <option value="4">IL</option>
+                    <option value="5">IM1</option>
+                    <option value="6">IM2</option>
+                    <option value="7">IM3</option>
+                    <option value="8">IH</option>
+                    <option value="9">AL</option>
+                </select>
+
+            </div>
+
+            <label for="basic-url">토익</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="toeic" name="toeic">
+                <div class="input-group-append">
+                    <span class="input-group-text" >점</span>
+                </div>
+            </div>
+
+            <label for="basic-url">토익스피킹</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="toeicSpeaking" name="toeicSpeaking">
+                <div class="input-group-append">
+                    <span class="input-group-text" >Lv</span>
+                </div>
+            </div>
+
+            <label for="basic-url">외국어</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="language" name="language">
+                <div class="input-group-append">
+                    <span class="input-group-text" >개</span>
+                </div>
+            </div>
+
+            <label for="basic-url">자격증</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="certificate" name="certificate">
+                <div class="input-group-append">
+                    <span class="input-group-text" >개</span>
+                </div>
+            </div>
+
+            <label for="basic-url">해외경험</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="oversea" name="oversea">
+                <div class="input-group-append">
+                    <span class="input-group-text" >번</span>
+                </div>
+            </div>
+
+            <label for="basic-url">인턴</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="intern" name="intern">
+                <div class="input-group-append">
+                    <span class="input-group-text" >건</span>
+                </div>
+            </div>
+
+            <label for="basic-url">수상내역</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="award" name="award">
+                <div class="input-group-append">
+                    <span class="input-group-text" >건</span>
+                </div>
+            </div>
+
+            <label for="basic-url">교내/사회/봉사</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" step=any id="volunteer" name="volunteer">
+                <div class="input-group-append">
+                    <span class="input-group-text" >건</span>
+                </div>
+            </div>
+
+            <div align="center">
+                <button class="btn btn-primary btn-lg active" type="submit">제출</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+<style>
+    @font-face {
+        font-family: 'Eoe_Zno_B';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_B.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .container {
+        max-width: 400px;
+        padding-top: 20px;
+        font-family: 'Eoe_Zno_B';
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+</style>
+
+</html>
