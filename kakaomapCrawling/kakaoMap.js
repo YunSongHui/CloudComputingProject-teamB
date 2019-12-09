@@ -79,6 +79,9 @@ async function getTakeTime(from, to) {
     if(!public.includes(":")) public = "00:"+public
     public += ":00"
 
+    // 예외처리
+    if(public == '1::00') public='01:00:00'
+
     return {
         from, to,
         car, public

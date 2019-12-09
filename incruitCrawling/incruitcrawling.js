@@ -81,9 +81,9 @@ async function nextPage() {
     while (true) {
         var data = await getData()
         data_list.push(data)
-        console.log(data)
+        // console.log(data)
         data.forEach(async d=>{
-            console.log(d)
+            // console.log(d)
             await insertRecruitment(d)
         })
         if (!await nextPage()) break;
