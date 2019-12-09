@@ -89,6 +89,20 @@ create table Recruitment_Info (
 	income int(6),  
 	publicTransport TIME,  
 	car TIME,
-	walk TIME,  
+	walk TIME
 );
 ```
+  
+#### 크롤러 정기적으로 실행하기
+#!/bin/bash  
+
+$cd $(dirname $0)  
+
+$. /home/ubuntu/scraping/bin/activate  
+
+$python3 /home/ubuntu/JobKorea.py > /home/ubuntu/run_JobKorea.sh
+
+$chmod +x /home/ubuntu/run_JobKorea.sh  
+
+$sudo vi /etc/crontab  
+50 * * * * ubuntu home/ubuntu/run_JobKorea.sh > /tmp/JobKorea.log 2>&1  
