@@ -238,6 +238,8 @@ CREATE TABLE IF NOT EXISTS `SuccessSpec` (
 
 
 ```
+
+## 웹 서버 배포
 #### AWS 서버 접속 
 1. PuTTY를 통해 우분투 리눅스 실행
 2. Session: Host Name (or IP address) 에
