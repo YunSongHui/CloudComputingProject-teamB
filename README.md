@@ -239,6 +239,50 @@ CREATE TABLE IF NOT EXISTS `SuccessSpec` (
 
 ```
 
+## 윈도우 기반 개발에 대한 설치
+#### JAVA 설치
+1. https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 에서 java se 8u231 window용 64bit를 다운로드  
+2. 내 PC의 속성으로 들어가서 고급 시스템 설정을 누르고  
+3. 고급 탭에서 환경 변수를 클릭  
+4. 시스템 변수 에서 새로 만들기 클릭
+5. 변수 이름에 JAVA_HOME 변수 값에 C:\Program Files\Java\jdk1.8.0_231 을 작성하고 확인을 누른다.  
+6. 사용자 변수의 path 편집을 누르고  
+7. 새로 만들기를 눌러서 %JAVA_HOME%\bin 를 입력하고 확인을 누른다.  
+8. cmd에서 java -version을 쳐서 잘 설치되었는지 확인  
+
+#### 이클립스 설치
+1. https://www.eclipse.org/downloads/?FEATURED_STORY 에서 Eclipse IDE 2019-09를 다운로드  
+2. 다운로드 한 파일을 실행한 후, Eclipse IDE for Enterprise Java Developers 설치   
+
+#### 톰캣 설치
+1. https://tomcat.apache.org/download-80.cgi에서 32-bit/64-bit Windows Service Installer (pgp, sha512) 다운로드  
+2. 다운로드 한 파일을 실행해서 설치  
+3. http://localhost:8080/ 를 쳐서 잘 설치되었는지 확인  
+
+#### 이클립스와 톰캣 연동
+1. 이클립스 상단에 Window 메뉴에서 Proferences 클릭  
+2. Proferences의 화면 좌측에서 [Sever] - [Runtime Environmants] 클릭  
+3. Add를 누르고 Apache Tomcat v8.5 선택하고 Next  
+4. 톰캣이 설치된 경로를 지정해주고 현재 자바 버전을 선택한 후에 Finish  
+5. 이클립스 상단에 Window 메뉴에서 [Show View] - [Servers] 클릭  
+6. No servers are available. Click this link to create a new server... 클릭  
+7. 설치한 톰캣 버전을 선택하고 Finish
+
+#### 필요한 jar 파일
+##### JSTL
+- https://tomcat.apache.org/download-taglibs.cgi 에서  
+>> taglibs-standard-impl-1.2.5.jar (pgp, sha512)  
+>> taglibs-standard-spec-1.2.5.jar (pgp, sha512)  
+>> taglibs-standard-jstlel-1.2.5.jar (pgp, sha512)  
+>> taglibs-standard-compat-1.2.5.jar (pgp, sha512)  
+파일을 다운로드  
+##### mysql connector
+- https://dev.mysql.com/downloads/ 에서 Connector/J zip 파일을 다운로드
+
+1. 다운로드 받은 파일들은 모두 C:\Program Files\Java\jdk1.8.0_231\jre\lib 로 이동시킨다.  
+2. jstl.jar와 standard.jar 파일은 복사해서 이클립스의 다이나믹 프로젝트의 [WebContent] - [WEB-INF] - [lib]로 붙여넣기  
+3. 프로젝트 우클릭해서 [Properties] - [Java Build Path] - [Libraries] - [Add External Jars] 에 다운받은 파일 넣기
+
 ## 웹 서버 배포
 #### AWS 서버 접속 
 1. PuTTY를 통해 우분투 리눅스 실행
