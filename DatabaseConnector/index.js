@@ -20,6 +20,7 @@ exports.getAll = async function getAll() {
         return result[0]
     } catch (error) {
         console.log(error)
+        await init()
         return false
     }
 }
@@ -34,6 +35,7 @@ exports.setTransferTime = async function setTransferTime(id, data) {
         return result
     } catch (error) {
         console.log(error)
+        await init()
         return false
     }
 }
@@ -48,6 +50,7 @@ exports.insertRecruitment = async function insertRecruitment(data) {
         return result
     } catch (error) {
         console.log(error)
+        await init()
         return false
     }
 }
@@ -64,6 +67,7 @@ exports.insertJobplanet = async function insertJobplanet(data, company) {
     } catch (error) {
         await init()
         console.log(error)
+        await init()
         return false
     }
 }
@@ -79,6 +83,7 @@ exports.insertJobkoreaSuccess = async function insertJobkoreaSuccess(data) {
         return result
     } catch (error) {
         console.log(error)
+        await init()
         return false
     }
 }
@@ -94,6 +99,7 @@ exports.getJobkoreaSuccess = async function getJobkoreaSuccess(data) {
         return result[0]
     } catch (error) {
         console.log(error)
+        await init()
         return false
     }
 }
